@@ -8,22 +8,56 @@ int main(int argc, char* arg[])
 	FILE* file=fopen(fileName,"r");
 
 	char string[300];
-	char values[20];
+	int  values[20];
 	int newLineNumber=0;
+	int valNumber=0;
 	int total=0;
 
 	while(fgets(string,300,(FILE*)file))
 	{
 
-	for(int i=0;i<strlen(string);i++)
-		if(string[i]=='\0')
-			printf("newLine at %d",i);
-
 	
-	printf("%s",string);//this works
-	printf("%d",strlen(string));//returns # of characters
+	
+	
+				
+	
+		printf("%s",string);//this work
+		
+		
+		for(int i=0;i<strlen(string);i++)
+		if(string[i]!=' '||string[i]!='\n'||string[i]!='\0')
+		{
+			total=(string[i]-'0');
+			values[valNumber]=total;
+			valNumber++;
+			printf("%d",total);
+		}
+
+
+		//for(int i=0;i<valNumber;i++)
+		//printf("%d",values[i]);
+		
+		
+/*
+		for(int i=0;i<strlen(string);i++)
+		{
+			 total+=atoi(string[i]);
+			printf("%d",total);
+
+		}
+		
+		values[valNumber]=total;
+		valNumber++;
+
+*/
+	
 	}
-	/*	
+/*		
+	for(int i=0;i<valNumber;i++)
+	{
+		printf("%d",values[i]);
+	}
+		
 	
 	int count=0;
 	for(int i=0;i<3000;i++)
@@ -43,7 +77,7 @@ int main(int argc, char* arg[])
 		}
 
 	printf("%s",values);//temp end to while
-	}
+	
 
 	
 
@@ -53,7 +87,7 @@ int main(int argc, char* arg[])
 	int length=strlen(values)-1;
 
 	
-	int total=0;
+	total=0;
 	int i=0;
 	for(int i=0;i<length;i++)
 	{
@@ -65,12 +99,11 @@ int main(int argc, char* arg[])
 	}
 
 	printf("%d",total);
-	}
-	*/
+	
 
 		
 	
-	
+*/	
 
 	return 0;
 }
